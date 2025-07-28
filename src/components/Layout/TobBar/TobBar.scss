@@ -1,0 +1,80 @@
+@import '/src/styles/variables';
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 1rem 2rem;
+    box-shadow: 0px 15px 90px 0px #00000008;
+  font-family: $font-family;
+
+  .left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: $heading-color;
+    }
+
+    .org-switcher {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-family: inherit;
+    }
+  }
+
+  .search {
+    flex: 1;
+    max-width: 400px;
+    position: relative;
+
+    input {
+      width: 100%;
+      padding: 0.5rem 2.5rem 0.5rem 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .icon {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #999;
+    }
+  }
+
+  .right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    .icon {
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    .user {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      span {
+        font-size: 0.9rem;
+        color: $text-color;
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+@import '/src/styles/variables';
+
+.dashboard-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  .layout-body {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+
+    .content {
+      flex: 1;
+      padding: 2rem;
+      background: #f5f8fa;
+      overflow-y: auto;
+    }
+  }
+}
