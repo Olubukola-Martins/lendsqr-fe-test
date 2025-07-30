@@ -1,0 +1,33 @@
+@import "/src/styles/variables";
+
+.status-tag {
+  display: inline-block;
+  padding: 0.4rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  white-space: nowrap;
+
+  &--inactive {
+    background-color: rgba($text-color, 0.1);
+    color: $text-color;
+  }
+
+  &--pending {
+    background-color: rgba($yellow-color, 0.1);
+    color: $yellow-color;
+  }
+
+  &--blacklisted {
+    background-color: rgba($warning-color, 0.1);
+    color: $warning-color;
+  }
+
+
+  &--active {
+    background-color: rgba($success-color, 0.1);
+    color: $success-color;
+  }
+}
+

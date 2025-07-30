@@ -1,9 +1,23 @@
 @import "/src/styles/variables";
 
+.dashboard {
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  &__userTable {
+    &__moreIcon {
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
 
-.dashboard-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
+      &:hover,
+      &:focus {
+        color: $primary-color;
+        opacity: 0.8;
+      }
+    }
+  }
 }

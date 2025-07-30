@@ -1,0 +1,42 @@
+@import "/src/styles/variables.scss" ;
+
+.more-dropdown {
+  position: relative;
+  display: inline-block;
+  color: darken($text-color,30%);
+  font-weight: 500;
+
+  &__icon {
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: $heading-color;
+  }
+
+  &__menu {
+    position: absolute;
+    bottom: -0.8rem;
+    right: 0.7rem;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 0.5rem 0;
+    z-index: 100;
+
+    li {
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+  color: darken($text-color,10%);
+      cursor: pointer;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      column-gap: 8px;
+
+      &:hover {
+        background-color: #f5f7fa;
+      }
+    }
+  }
+}
