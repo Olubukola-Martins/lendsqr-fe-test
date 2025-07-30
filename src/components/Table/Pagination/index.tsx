@@ -17,10 +17,16 @@ const Pagination: React.FC<PaginationProps> = ({
 
   return (
     <div className={"pagination"}>
-      <select className={"select"}>
-        <option value="100">100</option>
-      </select>
-      <span>out of {total * 10}</span>
+      <div>
+        Showing
+        <select defaultValue={"100"} className={"select"}>
+          <option value="100">10</option>
+          <option value="100">20</option>
+          <option value="100">50</option>
+          <option value="100">100</option>
+        </select>
+        <span>out of {total * 10}</span>
+      </div>
 
       <div className={"pageList"}>
         <button
