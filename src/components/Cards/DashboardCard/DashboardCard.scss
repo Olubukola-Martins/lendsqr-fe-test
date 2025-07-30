@@ -1,0 +1,53 @@
+@import "../../../styles/variables";
+
+@import "/src/styles/variables";
+
+.dashboard-card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 200px;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &__icon {
+    font-size: 1.5rem;
+    color: $primary-color;
+    margin-bottom: 1rem;
+  }
+
+  &__label {
+    font-size: 0.875rem;
+    color: $text-color;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  &__value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $heading-color;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-card {
+    padding: 1rem;
+    &__icon {
+      font-size: 1.2rem;
+    }
+    &__value {
+      font-size: 1.25rem;
+    }
+  }
+}
+
