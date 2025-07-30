@@ -1,0 +1,183 @@
+@import "/src/styles/variables";
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 1rem 2rem;
+box-shadow: 3px 0px 20px 0px #0000000A;
+  font-family: $font-family;
+  width: 100vw;
+  max-height: 100px;
+  overflow: hidden;
+  position: relative;
+  z-index: 40;
+
+  &__menuIcon {
+    display: none;
+  }
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 4px;
+
+    &__logo {
+      width: 115px;
+      height: 30px;
+      object-fit: contain;
+    }
+    &__mini-logo {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      &__logo {
+        display: none;
+      }
+      &__mini-logo {
+        width: 18.6px;
+        height: 19.8px;
+        object-fit: contain;
+        display: block;
+      }
+    }
+
+    .org-switcher {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-family: inherit;
+    }
+  }
+  &__search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3px;
+    padding: 0.5rem;
+
+    &-input {
+      width: 25vw;
+      min-width: 200px;
+      border: 1px solid rgba($text-color, 0.5) !important ;
+      border-radius: 8px;
+    }
+    &-icon {
+      color: white;
+      background: $primary-color;
+      font-size: 14px;
+      font-weight: bolder;
+      padding: 10.4px 19px 10px;
+      margin-bottom: 16px;
+      margin-left: -4px;
+      border-radius: 0 8px 8px 0;
+      cursor: pointer;
+      &:hover {
+        background: darken($primary-color, 10%);
+        transition: background 0.4s ease;
+      }
+    }
+  }
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 8px;
+
+    &__text {
+      cursor: pointer;
+      color: $heading-color;
+      text-decoration: underline;
+      text-decoration-color: $heading-color;
+      &:hover {
+        color: darken($heading-color, 10%);
+        text-decoration-color: darken($heading-color, 10%);
+      }
+    }
+
+    .icon {
+      width: 1.3rem;
+      height: 1.5rem;
+      color: $heading-color;
+      cursor: pointer;
+    }
+
+    .user {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      &__name {
+        color: $active-text-color;
+        font-weight: 500;
+        .icon {
+          height: 9px;
+          width: 11px;
+        }
+      }
+
+      img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      span {
+        font-size: 0.9rem;
+        color: $text-color;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__menuIcon {
+      color: $heading-color;
+      display: block;
+      cursor: pointer;
+      font-size: 20px;
+    }
+    &__search {
+      padding: 0 0.5rem;
+
+      &-input {
+        width: 22vw;
+        min-width: 180px;
+        border: 1px solid rgba($text-color, 0.5) !important ;
+        border-radius: 8px;
+      }
+      &-icon {
+        display: none;
+      }
+    }
+
+    &__right {
+      padding-bottom: 4px;
+
+      .icon {
+        width: 1.1rem;
+        height: 1.2rem;
+      }
+      &__text {
+        display: none;
+      }
+      .user {
+        &__name {
+          display: none;
+          .icon {
+            height: 7px;
+            width: 7px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    padding: 0.8rem 4vw 0.6rem;
+  }
+}
