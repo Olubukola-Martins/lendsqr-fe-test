@@ -1,7 +1,5 @@
 @import "../../../styles/variables";
 
-@import "/src/styles/variables";
-
 .dashboard-card {
   background-color: white;
   padding: 1.5rem;
@@ -18,10 +16,18 @@
     transform: translateY(-2px);
   }
 
+  .dashboard-card__icon-bg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
   &__icon {
     font-size: 1.5rem;
-    color: $primary-color;
-    margin-bottom: 1rem;
   }
 
   &__label {
@@ -50,4 +56,3 @@
     }
   }
 }
-
