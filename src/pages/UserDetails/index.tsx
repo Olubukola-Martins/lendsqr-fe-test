@@ -4,6 +4,8 @@ import { UserAvatar } from "../../features/UserDetails/components/UserAvatar";
 import { Section } from "../../features/UserDetails/components/Section";
 import { Field } from "../../features/UserDetails/components/Field";
 import Tabs from "../../features/UserDetails/components/Tabs";
+import AppButton from "../../components/AppButton";
+import PageHeader from "../../components/PageHeader";
 
 const userData = {
   name: "Grace Effiom",
@@ -44,7 +46,7 @@ const userData = {
 
 export const UserDetails: React.FC = () => {
   const tabItem = [
-    { label: "General Details", element: <GeneralDetails />  },
+    { label: "General Details", element: <GeneralDetails /> },
     { label: "Documents", element: "" },
     { label: "Bank Details", element: "" },
     { label: "Loans", element: "" },
@@ -58,6 +60,17 @@ export const UserDetails: React.FC = () => {
 
   return (
     <div className="user-details">
+      <div>
+        <div></div>
+
+        <div className="user-details__header--title">
+          <PageHeader title="User Details" />
+          <div className="user-details__header--buttons">
+            <AppButton label="BLACKLIST USER" variant="warning" />
+            <AppButton label="ACTIVATE USER" variant="transparent" />
+          </div>
+        </div>
+      </div>
       <div className="user-details__header">
         <UserAvatar
           name={userData.name}
@@ -75,7 +88,9 @@ export const UserDetails: React.FC = () => {
         </div>
       </div>
 
-      <div className="user-details__content">{tabItem.find((item) => item.label === activeTab)?.element}</div>
+      <div className="user-details__content">
+        {tabItem.find((item) => item.label === activeTab)?.element}
+      </div>
     </div>
   );
 };
