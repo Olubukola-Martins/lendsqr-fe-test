@@ -3,6 +3,7 @@ import DashboardCardContainer from "./components/DashboardCardContainer";
 import "./Dashboard.scss";
 import MoreDropdown from "./components/MoreDropdown";
 import StatusTag, { type StatusType } from "../../components/Tag/StatusTag";
+import PageHeader from "../../components/PageHeader";
 
 export type TrowData = {
   organization: string;
@@ -15,6 +16,7 @@ export type TrowData = {
 const Dashboard = () => {
   return (
     <div className="dashboard">
+      <PageHeader title="Users" />
       <DashboardCardContainer />
       <UserTable
         columns={[

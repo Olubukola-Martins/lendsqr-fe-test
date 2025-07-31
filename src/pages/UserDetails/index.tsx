@@ -6,6 +6,8 @@ import { Field } from "../../features/UserDetails/components/Field";
 import Tabs from "../../features/UserDetails/components/Tabs";
 import AppButton from "../../components/AppButton";
 import PageHeader from "../../components/PageHeader";
+import { CgArrowLongLeft } from "react-icons/cg";
+import { useNavigate } from "react-router-dom";
 
 const userData = {
   name: "Grace Effiom",
@@ -45,6 +47,7 @@ const userData = {
 };
 
 export const UserDetails: React.FC = () => {
+  const navigate = useNavigate()
   const tabItem = [
     { label: "General Details", element: <GeneralDetails /> },
     { label: "Documents", element: "" },
@@ -60,8 +63,8 @@ export const UserDetails: React.FC = () => {
 
   return (
     <div className="user-details">
-      <div>
-        <div></div>
+      <div className="user-details__intro">
+        <div className="user-details__back"><CgArrowLongLeft onClick={() => navigate(-1)} className="user-details__back--icon" /> Back to Users</div>
 
         <div className="user-details__header--title">
           <PageHeader title="User Details" />
