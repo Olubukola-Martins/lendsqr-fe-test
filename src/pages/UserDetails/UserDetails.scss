@@ -2,11 +2,19 @@
 
 .user-details {
   padding: 1rem;
-  max-width: 1024px;
+//   max-width: 1024px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  min-height: fit-content;
+
+  &__header {
+    background: white;
+    &--tabs {
+      margin:0.5rem 1.3rem 0
+    }
+  }
 
   &__content {
     background: #fff;

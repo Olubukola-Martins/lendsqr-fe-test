@@ -1,0 +1,36 @@
+@import '/src//styles//variables';
+
+.tabs {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  background-color: inherit;
+
+  &__item {
+    flex: 1 0 auto;
+    padding: 1rem 0.8rem;
+    font-size: 1rem;
+    white-space: nowrap;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: $primary-color;
+    }
+
+    &--active {
+      color: $primary-color;
+      border-bottom: 2px solid $primary-color;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__item {
+      padding: 0.75rem 1rem;
+      font-size: 0.85rem;
+    }
+  }
+}
