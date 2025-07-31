@@ -1,0 +1,35 @@
+@import '/src/styles/variables';
+
+.user-avatar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8f8f8;
+  border-radius: 8px;
+  text-align: center;
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  &__icon {
+    font-size: 2rem;
+  }
+
+  &__name {
+    font-weight: bold;
+  }
+
+  &__tier,
+  &__balance,
+  &__bank {
+    font-size: 0.9rem;
+    color: #777;
+  }
+}
+
+

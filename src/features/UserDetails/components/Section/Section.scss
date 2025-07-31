@@ -1,0 +1,20 @@
+@import "/src/styles/variables";
+
+
+.section {
+  margin: 3rem 1.5rem;
+  color: $heading-color;
+
+  &__title {
+    font-weight: 500;
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    color:$text-color
+  }
+}
