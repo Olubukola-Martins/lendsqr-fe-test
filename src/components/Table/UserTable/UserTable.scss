@@ -1,0 +1,47 @@
+@import "/src/styles/variables";
+
+.tableContainer {
+  border-radius: 1px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  color: $text-color;
+  font-family: $page-font-family;
+  margin: 0.8rem 0;
+  padding: 0 1rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  thead {
+    text-align: left;
+    text-transform: uppercase;
+
+    th {
+      font-weight: 600;
+      padding: 21px 14px;
+      font-size: 12px;
+    }
+  }
+
+  tbody {
+      td {
+        padding: 18px 10px ;
+        border-bottom: 1px solid rgba($text-color, 0.1);        font-size: 14px;
+      }
+  
+    }
+}
+
+.sortIcon {
+  margin-left: 4px;
+  width: 21px;
+  height: 16px;
+  vertical-align: middle;
+  cursor:pointer;
+  &:hover {
+    color: $primary-color;
+  }
+}
