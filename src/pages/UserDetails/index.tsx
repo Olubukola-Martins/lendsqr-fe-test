@@ -51,9 +51,20 @@ export const UserDetails: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const state = location.state as User | undefined;
-  const userData = state ? { name: state.username } : mockUserData;
+  const userData = state
+    ? {
+        ...mockUserData,
+        name: state.username,
+        personal: {
+          ...mockUserData.personal,
+          "Full Name": state.username,
+          "Phone Number": state.phone,
+          "Email Address": state.email,
+        },
+      }
+    : mockUserData;
   const tabItem = [
-    { label: "General Details", element: <GeneralDetails /> },
+    { label: "General Details", element: <GeneralDetails userData={userData}/> },
     { label: "Documents", element: "" },
     { label: "Bank Details", element: "" },
     { label: "Loans", element: "" },
@@ -108,29 +119,31 @@ export const UserDetails: React.FC = () => {
   );
 };
 
-const GeneralDetails = () => {
-  return (
-    <>
-      <Section title="Personal Information">
-        {Object.entries(mockUserData.personal).map(([label, value]) => (
-          <Field key={label} label={label} value={value} />
-        ))}
-      </Section>
-      <Section title="Education and Employment">
-        {Object.entries(mockUserData.education).map(([label, value]) => (
-          <Field key={label} label={label} value={value} />
-        ))}
-      </Section>
-      <Section title="Socials">
-        {Object.entries(mockUserData.socials).map(([label, value]) => (
-          <Field key={label} label={label} value={value} />
-        ))}
-      </Section>
-      <Section title="Guarantor">
-        {Object.entries(mockUserData.guarantor).map(([label, value]) => (
-          <Field key={label} label={label} value={value} />
-        ))}
-      </Section>
-    </>
-  );
-};
+  const GeneralDetails:React.FC<{userData: typeof mockUserData}> = ({userData}) => {
+    return (
+      <>
+        <Section title="Personal Information">
+          {Object.entries(userData.personal).map(([label, value]) => (
+            <Field key={label} label={label} value={value} />
+          ))}
+        </Section>
+        <Section title="Education and Employment">
+          {Object.entries(mockUserData.education).map(([label, value]) => (
+            <Field key={label} label={label} value={value} />
+          ))}
+        </Section>
+        <Section title="Socials">
+          {Object.entries(mockUserData.socials).map(([label, value]) => (
+            <Field key={label} label={label} value={value} />
+          ))}
+        </Section>
+        <Section title="Guarantor">
+          {Object.entries(mockUserData.guarantor).map(([label, value]) => (
+            <Field key={label} label={label} value={value} />
+          ))}
+        </Section>
+      </>
+    );
+  };
+
+
