@@ -1,7 +1,7 @@
 @import "/src/styles/variables";
 
 .sidebar {
-  min-width: 270px;
+  min-width: 260px;
   width: 20vw;
   background: white;
   padding: 1rem 0rem 6rem;
@@ -102,6 +102,19 @@
 
         .switch {
           color: darken($active-text-color, 10%) !important;
+        }
+      }
+
+      .footer {
+        display: flex;
+        flex-direction: column;
+        gap:2rem;
+        margin: 1rem 0 1.4rem;
+        opacity: 1 !important;
+        .li{padding:0.4rem 0;}
+        .logout{border-top: 1px solid rgba($active-text-color, 0.1) !important;}
+        .version {
+          font-size: 0.8rem;
         }
       }
     }

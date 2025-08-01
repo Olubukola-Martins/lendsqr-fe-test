@@ -3,12 +3,14 @@ import "./Sidebar.scss";
 import { sidebarData } from "./utils/constants";
 import { icons } from "../../../assets/sideNavIcons";
 import { IoIosArrowDown } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
-const Sidebar: React.FC<{hide?:boolean}> = ({hide }) => {
+const Sidebar: React.FC<{ hide?: boolean }> = ({ hide }) => {
   const { organization, dashboard } = icons;
+  const navigate = useNavigate();
   return (
     <aside className={`sidebar ${hide ? "hide" : ""}`}>
-      <nav >
+      <nav>
         <div className="section">
           <ul>
             <li key={"switch"} className={"switch"}>
@@ -31,6 +33,12 @@ const Sidebar: React.FC<{hide?:boolean}> = ({hide }) => {
               </ul>
             </div>
           ))}
+          <ul className="footer">
+            <li className="logout" onClick={() => navigate("/")}>
+              {icons.logout} Logout
+            </li>
+            <li className="version"> v1.2.0</li>
+          </ul>
         </div>
       </nav>
     </aside>
