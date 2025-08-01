@@ -1,10 +1,10 @@
 @import "/src/styles/variables";
 
 .sidebar {
-  min-width: 270px;
+  min-width: 260px;
   width: 20vw;
   background: white;
-  padding: 2rem 0rem 8rem;
+  padding: 1rem 0rem 6rem;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   font-family: $page-font-family;
   height: 100vh;
@@ -12,6 +12,34 @@
   overflow-y: auto;
   color: $text-color;
 
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  &::-webkit-scrollbar-button:start {
+    display: none;
+  }
+
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.1) transparent;
 
   nav {
     .section {
@@ -74,6 +102,19 @@
 
         .switch {
           color: darken($active-text-color, 10%) !important;
+        }
+      }
+
+      .footer {
+        display: flex;
+        flex-direction: column;
+        gap:2rem;
+        margin: 1rem 0 1.4rem;
+        opacity: 1 !important;
+        .li{padding:0.4rem 0;}
+        .logout{border-top: 1px solid rgba($active-text-color, 0.1) !important;}
+        .version {
+          font-size: 0.8rem;
         }
       }
     }

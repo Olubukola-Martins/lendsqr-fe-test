@@ -1,0 +1,26 @@
+@import "/src/styles/variables";
+
+.filter-dropdown {
+  position: relative;
+  display: inline-block;
+
+  &__form {
+    position: absolute;
+    top: 1.3rem;
+    padding: 1.1rem 1rem !important ;
+    right: -5rem;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 0.5rem 0;
+    z-index: 100;
+  }
+  .form-actions {
+    display: flex;
+    padding: 0.8rem 0.6rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

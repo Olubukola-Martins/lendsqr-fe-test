@@ -7,8 +7,11 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
   color: $text-color;
   font-family: $page-font-family;
-  margin: 0.8rem 0;
+  margin: 2.4rem 0 0.8rem;
   padding: 0 1rem;
+  min-height: fit-content;
+    overflow: scroll;
+
 }
 
 .table {
@@ -23,13 +26,17 @@
       font-weight: 600;
       padding: 21px 14px;
       font-size: 12px;
+      text-wrap: nowrap;
     }
   }
 
   tbody {
       td {
-        padding: 18px 10px ;
-        border-bottom: 1px solid rgba($text-color, 0.1);        font-size: 14px;
+        padding: 18px 9px 18px;
+        border-bottom: 1px solid rgba($text-color, 0.1);  
+              font-size: 14px;
+            //   text-align: center;
+
       }
   
     }
@@ -45,3 +52,13 @@
     color: $primary-color;
   }
 }
+
+.loadingRow,
+.emptyRow {
+  text-align: center;
+  padding: 1rem;
+  font-style: italic;
+  color: #666;
+  height: 30vh;
+}
+

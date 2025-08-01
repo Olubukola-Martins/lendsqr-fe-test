@@ -1,18 +1,20 @@
-import React from 'react';
-import './AppButtoon.scss';
+import React from "react";
+import "./AppButtoon.scss";
 
 interface AppButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   label: string;
   className?: string;
+  variant?: "default" | "transparent" | "warning" | "reset";
 }
 
 const AppButton: React.FC<AppButtonProps> = ({
   label,
-  className = '',
+  className = "",
+  variant = "default",
   ...rest
 }) => {
   return (
-    <button className={`app-button ${className}`} {...rest}>
+    <button className={`${variant}-app-button btn ${className}`} {...rest}>
       {label}
     </button>
   );
