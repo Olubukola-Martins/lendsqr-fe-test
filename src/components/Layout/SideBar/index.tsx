@@ -1,5 +1,5 @@
 import React from "react";
-import "./Sidebar.scss";
+import "./SideBar.scss";
 import { sidebarData } from "./utils/constants";
 import { icons } from "../../../assets/sideNavIcons";
 import { IoIosArrowDown } from "react-icons/io";
