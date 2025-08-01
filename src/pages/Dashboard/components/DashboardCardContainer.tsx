@@ -2,9 +2,20 @@ import DashboardCard from "../../../components/Cards/DashboardCard";
 import "./../Dashboard.scss";
 import { colors } from "../../../styles/colors";
 import { dashBoardIcons } from "../../../assets/dashboardIcons";
-const DashboardCardContainer = () => {
+import { useState } from "react";
+const DashboardCardContainer: React.FC<{
+  onClick: {
+    handleUsers: () => void;
+    handleActiveUsers: () => void;
+    // usersWithLoans: () => void;
+    // usersWithSavings: () => void;
+  };
+}> = ({ onClick }) => {
+  const [activeCard, setActiveCard] = useState("users");
   const { blueTag, orangeTag, pinkTag, purpleTag } = colors;
-  const {activeUsers,users,usersWithLoans,usersWithSavings} = dashBoardIcons.cardIcon
+  const { activeUsers, users, usersWithLoans, usersWithSavings } =
+    dashBoardIcons.cardIcon;
+  const { handleActiveUsers, handleUsers } = onClick;
   return (
     <div className="dashboard-grid">
       <DashboardCard
@@ -12,12 +23,22 @@ const DashboardCardContainer = () => {
         label="Users"
         value="2,453"
         iconColor={purpleTag}
+        isActive={activeCard === "users"}
+        onClick={() => {
+          setActiveCard("users");
+          handleUsers();
+        }}
       />
       <DashboardCard
         icon={activeUsers}
         label="Active Users"
         value="2,453"
         iconColor={blueTag}
+        isActive={activeCard === "activeUsers"}
+        onClick={() => {
+          setActiveCard("activeUsers");
+          handleActiveUsers();
+        }}
       />
       <DashboardCard
         icon={usersWithLoans}

@@ -1,41 +1,6 @@
 import { useState, useEffect } from 'react';
-import type { StatusType } from '../components/Tag/StatusTag';
+import type { UseFetchUsersProps, UseFetchUsersResult, User } from '../pages/UserDetails/types';
 
-interface PaginationParams {
-  offset?: number;
-  limit?: number;
-}
-
-interface FilterParams {
-  organization?: string;
-  username?: string;
-  email?: string;
-  dateJoined?: string;
-  phone?: string;
-  status?: string;
-}
-
-interface User {
-  id: number;
-  organization: string;
-  username: string;
-  email: string;
-  dateJoined: string;
-  phone: string;
-  status: StatusType;
-  
-}
-
-interface UseFetchUsersProps {
-  pagination: PaginationParams;
-  filters: FilterParams;
-}
-
-interface UseFetchUsersResult {
-  data: User[];
-  loading: boolean;
-  errorMessage: string | null;
-}
 
 const useFetchUsers = ({
   pagination,

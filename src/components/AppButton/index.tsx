@@ -4,7 +4,7 @@ import "./AppButtoon.scss";
 interface AppButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   label: string;
   className?: string;
-  variant?: "default" | "transparent" | "warning";
+  variant?: "default" | "transparent" | "warning" | "reset";
 }
 
 const AppButton: React.FC<AppButtonProps> = ({

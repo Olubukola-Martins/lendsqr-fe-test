@@ -2,7 +2,9 @@ import React from "react";
 import "./UserTable.scss";
 import Pagination, { type PaginationProps } from "../Pagination";
 import { renderCell } from "../../../utils/helpers";
-import { IoFilter } from "react-icons/io5";
+import FilterDropdown, {
+  type FilterValues,
+} from "../../../pages/Dashboard/components/FilterDropdown";
 
 type TableColumn<T> = {
   header: string;
@@ -14,7 +16,9 @@ type TableProps<T> = {
   columns: TableColumn<T>[];
   data: T[];
   pagination: PaginationProps;
-  loading?: boolean; // Optional loading prop
+  loading?: boolean;
+  onFilter: (values: FilterValues) => void;
+  onReset?: () => void;
 };
 
 function UserTable<T>({
@@ -22,6 +26,8 @@ function UserTable<T>({
   data,
   pagination,
   loading = false,
+  onFilter,
+  onReset,
 }: TableProps<T>) {
   const cellContent = (col: TableColumn<T>, row: T) => {
     if (col.accessor) {
@@ -33,7 +39,7 @@ function UserTable<T>({
     }
   };
 
-  const isLastColumn = (i: number) => i !== columns.length - 1;
+  const isNotLastColumn = (i: number) => i !== columns.length - 1;
 
   return (
     <div>
@@ -43,8 +49,10 @@ function UserTable<T>({
             <tr>
               {columns.map((col, i) => (
                 <th key={i}>
-                  {col.header}{" "}
-                  {isLastColumn(i) && <IoFilter className="sortIcon" />}
+                  {col.header}
+                  {isNotLastColumn(i) && (
+                    <FilterDropdown onFilter={onFilter} onReset={onReset} />
+                  )}
                 </th>
               ))}
               <th />

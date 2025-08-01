@@ -7,6 +7,8 @@ interface DashboardCardProps {
   value: string | number;
   className?: string;
   iconColor?: string;
+  isActive?: boolean;
+  onClick?: () => void;
 }
 
 const DashboardCard: React.FC<DashboardCardProps> = ({
@@ -15,17 +17,22 @@ const DashboardCard: React.FC<DashboardCardProps> = ({
   value,
   className,
   iconColor = "#000",
+  isActive,
+  onClick,
 }) => {
   return (
-    <div className={`dashboard-card ${className || ""}`}>
-<div
-  className="dashboard-card__icon-bg"
-  style={{ backgroundColor: `${iconColor}1A` }} 
->
-  <div className="dashboard-card__icon" style={{ color: iconColor }}>
-    {icon}
-  </div>
-</div>
+    <div
+      className={`dashboard-card  ${
+        className || ""
+      }`} id={`${isActive ? "active" : ""}`}
+      onClick={onClick}>
+      <div
+        className="dashboard-card__icon-bg"
+        style={{ backgroundColor: `${iconColor}1A` }}>
+        <div className="dashboard-card__icon" style={{ color: iconColor }}>
+          {icon}
+        </div>
+      </div>
       <p className="dashboard-card__label">{label}</p>
       <h3 className="dashboard-card__value">{value}</h3>
     </div>

@@ -7,9 +7,10 @@ import Tabs from "../../features/UserDetails/components/Tabs";
 import AppButton from "../../components/AppButton";
 import PageHeader from "../../components/PageHeader";
 import { CgArrowLongLeft } from "react-icons/cg";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import type { User } from "./types";
 
-const userData = {
+const mockUserData = {
   name: "Grace Effiom",
   tier: 2,
   balance: "200,000.00",
@@ -47,7 +48,10 @@ const userData = {
 };
 
 export const UserDetails: React.FC = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const location = useLocation();
+  const state = location.state as User | undefined;
+  const userData = state ? { name: state.username } : mockUserData;
   const tabItem = [
     { label: "General Details", element: <GeneralDetails /> },
     { label: "Documents", element: "" },
@@ -64,7 +68,13 @@ export const UserDetails: React.FC = () => {
   return (
     <div className="user-details">
       <div className="user-details__intro">
-        <div className="user-details__back"><CgArrowLongLeft onClick={() => navigate(-1)} className="user-details__back--icon" /> Back to Users</div>
+        <div className="user-details__back">
+          <CgArrowLongLeft
+            onClick={() => navigate(-1)}
+            className="user-details__back--icon"
+          />{" "}
+          Back to Users
+        </div>
 
         <div className="user-details__header--title">
           <PageHeader title="User Details" />
@@ -77,9 +87,9 @@ export const UserDetails: React.FC = () => {
       <div className="user-details__header">
         <UserAvatar
           name={userData.name}
-          tier={userData.tier}
-          balance={userData.balance}
-          accountNumber={userData.accountNumber}
+          tier={mockUserData.tier}
+          balance={mockUserData.balance}
+          accountNumber={mockUserData.accountNumber}
           userCode="LSQFf587g90"
         />
         <div className="user-details__header--tabs">
@@ -102,22 +112,22 @@ const GeneralDetails = () => {
   return (
     <>
       <Section title="Personal Information">
-        {Object.entries(userData.personal).map(([label, value]) => (
+        {Object.entries(mockUserData.personal).map(([label, value]) => (
           <Field key={label} label={label} value={value} />
         ))}
       </Section>
       <Section title="Education and Employment">
-        {Object.entries(userData.education).map(([label, value]) => (
+        {Object.entries(mockUserData.education).map(([label, value]) => (
           <Field key={label} label={label} value={value} />
         ))}
       </Section>
       <Section title="Socials">
-        {Object.entries(userData.socials).map(([label, value]) => (
+        {Object.entries(mockUserData.socials).map(([label, value]) => (
           <Field key={label} label={label} value={value} />
         ))}
       </Section>
       <Section title="Guarantor">
-        {Object.entries(userData.guarantor).map(([label, value]) => (
+        {Object.entries(mockUserData.guarantor).map(([label, value]) => (
           <Field key={label} label={label} value={value} />
         ))}
       </Section>
