@@ -5,6 +5,7 @@ import User from "../pages/User";
 import AuthLayout from "../layouts/AuthLayout";
 import DashboardLayout from "../layouts/DashboardLayout";
 import { UserDetails } from "../pages/UserDetails";
+import NotFound from "../pages/NotFound";
 
 export const router = createBrowserRouter([
   {
@@ -23,4 +24,8 @@ export const router = createBrowserRouter([
       { path: "users/:id", element: <UserDetails /> },
     ],
   },
+  {
+    path: "*",
+    element: <NotFound/>
+  }
 ]);
