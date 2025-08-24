@@ -75,10 +75,14 @@
   &__code {
     color: $text-color;
     font-size: 0.9rem;
+    text-align: left;
+    margin-top: 0.3rem;
   }
 
   &__balance {
     font-weight: 500;
+    text-align: left;
+    margin-bottom: 0.3rem;
   }
 
   &__bank {
@@ -86,6 +90,29 @@
     font-size: 0.8rem;
   }
 }
+
+.star-rating {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.45rem;
+
+  .star {
+    width: 16px;
+    height: 16px;
+    stroke: #E9B200;
+    fill: none;
+    transition: fill 0.3s ease;
+
+    &.filled {
+      fill: #E9B200;
+    }
+
+    &.outlined {
+      fill: none;
+    }
+  }
+}
+
 
 @media (max-width: 760px) {
   .user-avatar {

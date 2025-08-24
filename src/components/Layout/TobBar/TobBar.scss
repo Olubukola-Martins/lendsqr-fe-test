@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: center;
   background: white;
-  padding: 1rem 2rem;
+  padding: 1rem 2rem 1rem 0.5rem;
 box-shadow: 3px 0px 20px 0px #0000000A;
   font-family: $font-family;
   width: 100vw;
@@ -108,6 +108,7 @@ box-shadow: 3px 0px 20px 0px #0000000A;
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      margin-right: 0.4rem;
 
       &__name {
         color: $active-text-color;
